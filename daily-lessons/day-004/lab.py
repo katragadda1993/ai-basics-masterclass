@@ -41,7 +41,7 @@ def numerical_parameter_gradient(parameter, objective, epsilon=1e-5):
     )
 
 
-def train_linear_regression(xs, ys, learning_rate=0.1, steps=100):
+def train_linear_regression(xs, ys, learning_rate=0.1, steps=500):
     if learning_rate <= 0:
         raise ValueError("learning_rate must be positive")
     if steps < 0:
@@ -97,7 +97,7 @@ def main():
     assert isclose(one_step_loss, 1.06)
 
     weights, bias, history, final_loss = train_linear_regression(
-        xs, ys, learning_rate=0.1, steps=100
+        xs, ys, learning_rate=0.1, steps=500
     )
     assert history[-1] < history[0]
     assert final_loss < history[0]
@@ -112,7 +112,7 @@ def main():
     print(f"gradient db: {db:.1f}")
     print(f"parameters after one step: w={one_step_w:.1f}, b={one_step_b:.1f}")
     print(f"loss after one step: {one_step_loss:.2f}")
-    print(f"trained parameters after 100 steps: w={weights:.6f}, b={bias:.6f}")
+    print(f"trained parameters after 500 steps: w={weights:.6f}, b={bias:.6f}")
     print(f"final loss: {final_loss:.8f}")
     print("training loss decreased: PASS")
     print("all checks passed")
