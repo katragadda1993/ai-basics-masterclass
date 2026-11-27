@@ -82,13 +82,13 @@ A vector is not just a list: its order and units matter. If a model was trained 
 
 A matrix is a two-dimensional rectangular arrangement of numbers.
 
-[
+\[
 X =
-egin{bmatrix}
-1 & 2 \
+\begin{bmatrix}
+1 & 2 \\
 3 & 4
-end{bmatrix}
-]
+\end{bmatrix}
+\]
 
 Its shape is `(2, 2)`: two rows and two columns.
 
@@ -104,9 +104,9 @@ A tensor is a generalization of scalar, vector and matrix to multiple dimensions
 
 Example: a batch of audio feature frames:
 
-[
-	ext{audio features shape} = (B,T,C)
-]
+\[
+\text{audio feature shape} = (B,T,C)
+\]
 
 where:
 - (B) = number of examples in a batch
@@ -130,31 +130,31 @@ An image batch might use `(B,H,W,C)` or `(B,C,H,W)`, depending on the framework 
 
 Given two vectors:
 
-[
-a=[a_1,a_2,ldots,a_n],quad b=[b_1,b_2,ldots,b_n]
-]
+\[
+a=[a_1,a_2,\ldots,a_n],\quad b=[b_1,b_2,\ldots,b_n]
+\]
 
 Their dot product is:
 
-[
-acdot b = sum_{i=1}^{n}a_i b_i
-]
+\[
+a\cdot b = \sum_{i=1}^{n} a_i b_i
+\]
 
 Worked example:
 
-[
-a=[2,1,0.05],quad w=[0.5,1.2,10]
-]
+\[
+a=[2,1,0.05],\quad w=[0.5,1.2,10]
+\]
 
-[
-acdot w = (2)(0.5)+(1)(1.2)+(0.05)(10)=2.7
-]
+\[
+a\cdot w = (2)(0.5)+(1)(1.2)+(0.05)(10)=2.7
+\]
 
 The result is a scalar. In a neural-network unit, the dot product is commonly followed by a bias:
 
-[
-z = wcdot x + b
-]
+\[
+z = w\cdot x + b
+\]
 
 Then an activation function may transform (z).
 
@@ -164,9 +164,9 @@ Then an activation function may transform (z).
 
 The Euclidean or L2 norm measures a vector's magnitude:
 
-[
-|a|_2 = sqrt{sum_i a_i^2}
-]
+\[
+\|a\|_2 = \sqrt{\sum_i a_i^2}
+\]
 
 For ([3,4]), the L2 norm is 5.
 
@@ -176,10 +176,10 @@ Norms are used in normalization, regularization and similarity calculations.
 
 Cosine similarity measures the angle-based alignment of two non-zero vectors:
 
-[
-operatorname{cosine}(a,b)=
-rac{acdot b}{|a|_2|b|_2}
-]
+\[
+\operatorname{cosine}(a,b)=
+\frac{a\cdot b}{\|a\|_2\|b\|_2}
+\]
 
 For (a=[1,0,1]) and (b=[1,1,0]):
 
@@ -197,37 +197,38 @@ For non-zero vectors, the value is between -1 and 1. Some embedding systems norm
 
 A matrix can transform an input vector:
 
-[
+\[
 y=Ax
-]
+\]
 
 For example:
 
-[
+\[
 A =
-egin{bmatrix}
-2 & 1\
+\begin{bmatrix}
+2 & 1\\
 1 & 3
-end{bmatrix},
-quad
+\end{bmatrix},
+\quad
 x =
-egin{bmatrix}
-4\
+\begin{bmatrix}
+4\\
 2
-end{bmatrix}
-]
+\end{bmatrix}
+\]
 
-[
+\[
 y =
-egin{bmatrix}
-2(4)+1(2)\
+\begin{bmatrix}
+2(4)+1(2)\\
 1(4)+3(2)
-end{bmatrix}
+\end{bmatrix}
 =
-egin{bmatrix}
-10\10
-end{bmatrix}
-]
+\begin{bmatrix}
+10\\
+10
+\end{bmatrix}
+\]
 
 Each output is a weighted combination of the input values.
 
@@ -235,37 +236,35 @@ Geometrically, a matrix represents a linear transformation: it can rotate, scale
 
 ### 4.2 Matrix-matrix multiplication
 
-If (A) has shape ((m,n)) and (B) has shape ((n,p)), then:
-
-[
-A_{m	imes n}B_{n	imes p}=C_{m	imes p}
-]
+\[
+A_{m\times n}B_{n\times p}=C_{m\times p}
+\]
 
 The inner dimensions must match. The result uses the outer dimensions.
 
 Example:
 
-[
+\[
 X =
-egin{bmatrix}
-1&2\
-3&4
-end{bmatrix},
-quad
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix},
+\quad
 W =
-egin{bmatrix}
-2&0&1\
-1&1&0
-end{bmatrix}
-]
+\begin{bmatrix}
+2 & 0 & 1\\
+1 & 1 & 0
+\end{bmatrix}
+\]
 
-[
+\[
 XW =
-egin{bmatrix}
-4&2&1\
-10&4&3
-end{bmatrix}
-]
+\begin{bmatrix}
+4 & 2 & 1\\
+10 & 4 & 3
+\end{bmatrix}
+\]
 
 Shapes:
 - (X): ((2,2))
@@ -278,9 +277,9 @@ The matrix product is not element-by-element multiplication. In NumPy, `A * B` i
 
 A batch of examples is represented by (X), where rows are examples and columns are input features:
 
-[
-X_{B	imes F}W_{F	imes O}+b_{O}=Y_{B	imes O}
-]
+\[
+X_{B\times F}W_{F\times O}+b_O=Y_{B\times O}
+\]
 
 - (B): batch size
 - (F): input features
@@ -325,9 +324,9 @@ Read the official [NumPy broadcasting guide](https://numpy.org/doc/stable/user/b
 
 A tensor's shape does not tell you how much memory it uses. Dtype matters too.
 
-[
-	ext{bytes} = left(prod_i 	ext{shape}_iight)	imes 	ext{bytes per element}
-]
+\[
+\text{bytes} = \left(\prod_i \text{shape}_i\right)\times \text{bytes per element}
+\]
 
 Example: a `(2,1024,80)` float32 tensor contains 163,840 elements. At 4 bytes per element it uses 655,360 bytes (640 KiB) for the element storage, excluding framework and allocator overhead.
 
