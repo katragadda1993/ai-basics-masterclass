@@ -11,10 +11,10 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A5 | Supervisor + workers | Which subtasks can safely run in parallel? | Supervisor, worker contracts and aggregation |
 | A6 | Event-driven agents | How do events start work without duplicate side effects? | Queue consumer, idempotency and dead-letter flow |
 | A7 | Human-in-the-loop | Which actions require approval and how is approval audited? | Approval state, reviewer UI/API and audit trail |
-| A8 | State, memory and context | What belongs in working state, episodic memory or retrieval? | Versioned state schema and retrieval policy |
-| A9 | Security and tool boundaries | How are identity, permissions and untrusted content handled? | Threat model, tool policy and injection tests |
-| A10 | Evaluation and observability | How do we know the agent is reliable and improving? | Golden set, traces, metrics and regression gate |
-| A11 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
+| A8 | Embedding retrieval and specialist routing | How can vector similarity rank evidence or suggest a specialist without becoming an authorization decision? | Versioned embedding contract, tenant-scoped retrieval and evaluated router with fallback |\n| A9 | State, memory and context | What belongs in working state, episodic memory or retrieval? | Versioned state schema and retrieval policy |
+| A10 | Security and tool boundaries | How are identity, permissions and untrusted content handled? | Threat model, tool policy and injection tests |
+| A11 | Evaluation and observability | How do we know the agent is reliable and improving? | Golden set, traces, metrics and regression gate |
+| A12 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
 
 ## Architecture selection rules
 
