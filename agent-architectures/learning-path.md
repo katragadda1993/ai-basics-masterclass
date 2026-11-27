@@ -19,6 +19,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A13 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
 | A14 | ML experiment governance agent | How can an agent assist ML experiments without controlling data splits, test access or model promotion? | Problem contract, immutable split manifest, validation workflow, test gate and approval record |
 | A15 | Objective-aware model selection gate | How can a system select regression/classification workflows and enforce objective-specific evaluation without exposing test labels to development? | Typed prediction contract, deterministic task router, metric contract, validation threshold and frozen-candidate test gate |
+| A16 | Tree ensemble experiment gate | How can tree/forest candidates be compared reproducibly while protecting split boundaries and preventing feature-importance claims from becoming causal claims? | Immutable split manifest, bounded training workers, validation metric/importance audit, frozen test gate and human approval |
 
 ## Architecture selection rules
 
@@ -35,6 +36,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [budget-aware agent execution controller](patterns/budget-aware-agent-execution.md) extends A13. It places deterministic budget reservations, policy checks, bounded retries, deadline propagation and verification around model/tool calls. It is a runtime resource controller, not a gradient-based neural-network optimizer.
 - The [ML Experiment Governance Agent](patterns/ml-experiment-governance-agent.md) extends A14. It uses deterministic split manifests, pipeline isolation, a frozen-candidate test gate, immutable artifact lineage and human approval.
 - The [Objective-Aware Model Selection Gate](patterns/objective-aware-model-selection-gate.md) extends A15. It routes validated problem contracts to regression or classification, applies the right metric contract, selects thresholds on validation data and protects the final test-set boundary.
+- The [Tree Ensemble Experiment Gate](patterns/tree-ensemble-experiment-gate.md) extends A16. It compares tree/forest candidates with immutable splits, bounded workers, validation-only importance analysis, a frozen-candidate test gate and human approval.
 
 ## Required engineering contract for every pattern
 
