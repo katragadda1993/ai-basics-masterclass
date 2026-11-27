@@ -1,6 +1,6 @@
 # Reusable AI Agent Architectures
 
-A practical architecture library for designing reliable, reusable AI agents. These are reference patterns, not claims that one framework is universally best. Select the simplest architecture that meets the task's reliability, latency, privacy, cost and safety requirements.
+A practical architecture library for designing reliable, reusable AI agents. These are reference patterns, not claims that one framework is universally best. Select the simplest architecture that meets the task's reliability, latency, privacy, cost and safety requirements. Follow the [sequential architecture learning path](learning-path.md) for a guided progression from deterministic workflows to production hardening.
 
 ## Design principles
 
