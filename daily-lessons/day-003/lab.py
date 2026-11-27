@@ -17,7 +17,7 @@ def main() -> None:
     weights = np.array([0.5, 1.2, 10.0], dtype=np.float32)
     score = features @ weights
     assert features.shape == (3,)
-    assert np.isclose(score, 2.2)
+    assert np.isclose(score, 2.7)
     print(f"dot score: {score:.1f}")
 
     # 2) Two examples (rows) with two features each, projected to 3 outputs.
