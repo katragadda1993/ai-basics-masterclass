@@ -20,6 +20,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A14 | ML experiment governance agent | How can an agent assist ML experiments without controlling data splits, test access or model promotion? | Problem contract, immutable split manifest, validation workflow, test gate and approval record |
 | A15 | Objective-aware model selection gate | How can a system select regression/classification workflows and enforce objective-specific evaluation without exposing test labels to development? | Typed prediction contract, deterministic task router, metric contract, validation threshold and frozen-candidate test gate |
 | A16 | Tree ensemble experiment gate | How can tree/forest candidates be compared reproducibly while protecting split boundaries and preventing feature-importance claims from becoming causal claims? | Immutable split manifest, bounded training workers, validation metric/importance audit, frozen test gate and human approval |
+| A17 | Classical classifier selection gate | How can KNN, Naive Bayes and SVM candidates be compared with correct scaling, calibration checks and a protected final test set? | Typed candidate contracts, leakage-safe pipelines, validation-only selection, frozen test gate and human approval |
 
 ## Architecture selection rules
 
