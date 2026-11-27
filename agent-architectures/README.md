@@ -63,6 +63,10 @@ flowchart TD
 | Human-in-the-loop | High-impact or ambiguous decisions | Approval bottlenecks |
 | Retrieval-grounded agent | Decisions need large/private knowledge bases | Retrieval misses or stale sources |
 
+### Additional pattern: probability-aware routing
+
+[Probabilistic Routing with an Abstain Path](patterns/probabilistic-routing-abstain.md) — use calibrated estimates to route ambiguous work safely, with explicit abstention and independent authorization.
+
 ## Reusable agent roles
 
 - **Intake/router:** classify intent, extract constraints, route to a workflow.
