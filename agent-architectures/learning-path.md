@@ -28,6 +28,10 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - Use event-driven execution for asynchronous work; make side effects idempotent.
 - Put human approval before irreversible or high-impact operations.
 
+## Companion implementation: budget-aware execution
+
+The [budget-aware agent execution controller](patterns/budget-aware-agent-execution.md) extends A13. It places deterministic budget reservations, policy checks, bounded retries, deadline propagation and verification around model/tool calls. It is a runtime resource controller, not a gradient-based neural-network optimizer.
+
 ## Required engineering contract for every pattern
 
 Every implementation must document:
