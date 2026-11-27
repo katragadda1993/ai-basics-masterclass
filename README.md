@@ -2,7 +2,7 @@
 
 A structured, hands-on learning journey from AI fundamentals to building and deploying modern AI systems.
 
-**Format:** one focused 60-minute lesson per day  
+**Format:** one focused 60-minute lesson per scheduled session, delivered sequentially  
 **Approach:** concepts → architecture → worked examples → coding lab → review  
 **Level:** beginner-friendly foundations, progressing to advanced AI engineering
 
