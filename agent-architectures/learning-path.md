@@ -17,6 +17,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A11 | Security and tool boundaries | How are identity, permissions and untrusted content handled? | Threat model, tool policy and injection tests |
 | A12 | Evaluation and observability | How do we know the agent is reliable and improving? | Golden set, traces, metrics and regression gate |
 | A13 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
+| A14 | ML experiment governance agent | How can an agent assist ML experiments without controlling data splits, test access or model promotion? | Problem contract, immutable split manifest, validation workflow, test gate and approval record |
 
 ## Architecture selection rules
 
@@ -28,9 +29,10 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - Use event-driven execution for asynchronous work; make side effects idempotent.
 - Put human approval before irreversible or high-impact operations.
 
-## Companion implementation: budget-aware execution
+## Companion implementations
 
-The [budget-aware agent execution controller](patterns/budget-aware-agent-execution.md) extends A13. It places deterministic budget reservations, policy checks, bounded retries, deadline propagation and verification around model/tool calls. It is a runtime resource controller, not a gradient-based neural-network optimizer.
+- The [budget-aware agent execution controller](patterns/budget-aware-agent-execution.md) extends A13. It places deterministic budget reservations, policy checks, bounded retries, deadline propagation and verification around model/tool calls. It is a runtime resource controller, not a gradient-based neural-network optimizer.
+- The [ML Experiment Governance Agent](patterns/ml-experiment-governance-agent.md) extends A14. It uses deterministic split manifests, pipeline isolation, a frozen-candidate test gate, immutable artifact lineage and human approval.
 
 ## Required engineering contract for every pattern
 
