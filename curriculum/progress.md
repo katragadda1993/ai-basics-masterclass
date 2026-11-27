@@ -6,6 +6,7 @@
 |---|---|---|
 | 001 | [What Is Artificial Intelligence?](../daily-lessons/day-001/README.md) | Published |
 | 002 | [How AI Systems Evolved: Rules, Search, Learning and Generative Models](../daily-lessons/day-002/README.md) | Published |
+| 003 | [Vectors, Matrices and Tensors: The Mathematics Behind AI](../daily-lessons/day-003/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -13,8 +14,8 @@
 
 | Phase | Subject | Status |
 |---|---|---|
-| 1 | AI foundations | In progress |
-| 2 | Mathematics for AI | Planned |
+| 1 | AI foundations | Content published; learner exercises pending |
+| 2 | Mathematics for AI | In progress |
 | 3 | Machine learning | Planned |
 | 4 | Deep learning | Planned |
 | 5 | Transformers and generative AI | Planned |
@@ -26,6 +27,8 @@
 
 ## Agent architecture track
 
-See [the sequential agent architecture learning path](../agent-architectures/learning-path.md). It progresses from deterministic workflows and single-agent tool use through router/specialist, planner–executor–verifier, supervisor/worker, event-driven and human-in-the-loop designs, then state, memory, security, evaluation, observability, reliability and cost/latency.
+See [the sequential agent architecture learning path](../agent-architectures/learning-path.md). It progresses from deterministic workflows and single-agent tool use through router/specialist, planner–executor–verifier, supervisor/worker, event-driven and human-in-the-loop designs, then vector retrieval and semantic routing, state, memory, security, evaluation, observability, reliability and cost/latency.
+
+**New companion pattern:** [Embedding Retrieval and Specialist Routing](../agent-architectures/patterns/embedding-retrieval-router.md).
 
 Update this file as new lessons are published and as learner exercises are completed.
