@@ -58,7 +58,7 @@ A model may be confidently wrong on an OOD input. Low entropy alone must never f
     "pcie": 0.18,
     "audio": 0.10
   },
-  "predictive_entropy": 0.0,
+  "predictive_entropy": 0.775445,
   "top_two_margin": 0.54,
   "ood_status": "not_detected",
   "decision": "route_read_only",
