@@ -49,10 +49,13 @@ Prompt design and structured outputs; embedding models and semantic search; vect
 ### Phase 7 — AI agents and orchestration
 Agent loop; planning, tools, state and memory; workflow and multi-agent patterns; MCP servers, tools and resources; context engineering; reliability, security and human approval; agent testing.
 
-### Phase 8 — Model adaptation and deployment
+### Phase 8 — Reusable agent architectures
+Agent design principles; single-agent and workflow patterns; router/specialist, planner–executor–verifier and supervisor/worker designs; durable state machines; typed tools; memory boundaries; security and policy enforcement; evaluation, observability, reliability and human approval; reusable agent specifications and reference implementations.
+
+### Phase 9 — Model adaptation and deployment
 Open-weight and hosted models; local inference; fine-tuning, LoRA and quantization; datasets and experiment tracking; APIs, containers and deployment; monitoring and lifecycle.
 
-### Phase 9 — Capstone projects
+### Phase 10 — Capstone projects
 Build a small ML application, document Q&A RAG application, tool-using AI agent, MCP-connected assistant and an evaluated end-to-end AI application.
 
 ## Repository structure
@@ -70,7 +73,7 @@ ai-basics-masterclass/
 ├── transformers/
 ├── llm/
 ├── rag/
-├── ai-agents/
+├── ai-agents/\n├── agent-architectures/ (patterns, templates and examples)
 ├── mcp/
 ├── hands-on-projects/
 ├── exercises/
