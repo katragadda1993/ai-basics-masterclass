@@ -15,6 +15,7 @@
 | 009 | [Supervised Learning: Linear Regression, Logistic Regression and the Learning Objective](../daily-lessons/day-009/README.md) | Published |
 | 010 | [Decision Trees, Entropy, Information Gain, CART and Random Forests](../daily-lessons/day-010/README.md) | Published |
 | 011 | [K-Nearest Neighbors, Naive Bayes and Support Vector Machines](../daily-lessons/day-011/README.md) | Published |
+| 012 | [Unsupervised Learning: Clustering, K-Means, Hierarchical Clustering and DBSCAN](../daily-lessons/day-012/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -24,7 +25,7 @@
 |---|---|---|
 | 1 | AI foundations | Content published; learner exercises pending |
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
-| 3 | Machine learning | In progress — sessions 008–010 published |
+| 3 | Machine learning | In progress — sessions 008–012 published |
 | 4 | Deep learning | Planned |
 | 5 | Transformers and generative AI | Planned |
 | 6 | LLM application engineering | Planned |
@@ -46,5 +47,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [Objective-Aware Model Selection Gate](../agent-architectures/patterns/objective-aware-model-selection-gate.md)
 - [Tree Ensemble Experiment Gate](../agent-architectures/patterns/tree-ensemble-experiment-gate.md)
 - [Classical Classifier Selection Gate](../agent-architectures/patterns/classical-classifier-selection-gate.md)
+- [Unsupervised Discovery and Anomaly Triage Gate](../agent-architectures/patterns/unsupervised-discovery-anomaly-triage.md)
 
 Update this file as new lessons are published and as learner exercises are completed.

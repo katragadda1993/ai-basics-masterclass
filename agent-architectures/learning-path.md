@@ -21,6 +21,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A15 | Objective-aware model selection gate | How can a system select regression/classification workflows and enforce objective-specific evaluation without exposing test labels to development? | Typed prediction contract, deterministic task router, metric contract, validation threshold and frozen-candidate test gate |
 | A16 | Tree ensemble experiment gate | How can tree/forest candidates be compared reproducibly while protecting split boundaries and preventing feature-importance claims from becoming causal claims? | Immutable split manifest, bounded training workers, validation metric/importance audit, frozen test gate and human approval |
 | A17 | Classical classifier selection gate | How can KNN, Naive Bayes and SVM candidates be compared with correct scaling, calibration checks and a protected final test set? | Typed candidate contracts, leakage-safe pipelines, validation-only selection, frozen test gate and human approval |
+| A18 | Unsupervised discovery and anomaly triage gate | How can unlabeled telemetry be grouped and unusual observations triaged without treating clusters/noise as fault truth? | Versioned feature transform, bounded K-Means/hierarchical/DBSCAN candidates, population-aware metrics, stability checks and human interpretation |
 
 ## Architecture selection rules
 
@@ -31,6 +32,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - Use parallel workers only for independent subtasks with explicit merge rules.
 - Use event-driven execution for asynchronous work; make side effects idempotent.
 - Put human approval before irreversible or high-impact operations.
+- For unsupervised discovery, never interpret cluster IDs or density noise as semantic labels without independent evidence and human review.
 
 ## Companion implementations
 
@@ -38,6 +40,8 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [ML Experiment Governance Agent](patterns/ml-experiment-governance-agent.md) extends A14. It uses deterministic split manifests, pipeline isolation, a frozen-candidate test gate, immutable artifact lineage and human approval.
 - The [Objective-Aware Model Selection Gate](patterns/objective-aware-model-selection-gate.md) extends A15. It routes validated problem contracts to regression or classification, applies the right metric contract, selects thresholds on validation data and protects the final test-set boundary.
 - The [Tree Ensemble Experiment Gate](patterns/tree-ensemble-experiment-gate.md) extends A16. It compares tree/forest candidates with immutable splits, bounded workers, validation-only importance analysis, a frozen-candidate test gate and human approval.
+- The [Classical Classifier Selection Gate](patterns/classical-classifier-selection-gate.md) extends A17. It compares KNN, Naive Bayes and SVM using leakage-safe preprocessing, validation-only selection, calibration checks and a protected final test set.
+- The [Unsupervised Discovery and Anomaly Triage Gate](patterns/unsupervised-discovery-anomaly-triage.md) extends A18. It compares clustering candidates with versioned feature transforms, population-aware metrics, noise semantics, stability checks and human interpretation.
 
 ## Required engineering contract for every pattern
 
