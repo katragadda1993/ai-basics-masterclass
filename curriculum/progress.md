@@ -9,6 +9,7 @@
 | 003 | [Vectors, Matrices and Tensors: The Mathematics Behind AI](../daily-lessons/day-003/README.md) | Published |
 | 004 | [Functions, Derivatives, Gradients and the Chain Rule](../daily-lessons/day-004/README.md) | Published |
 | 005 | [Probability, Statistics and Bayes' Theorem](../daily-lessons/day-005/README.md) | Published |
+| 006 | [Information Theory: Entropy, Cross-Entropy and KL Divergence](../daily-lessons/day-006/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -17,7 +18,7 @@
 | Phase | Subject | Status |
 |---|---|---|
 | 1 | AI foundations | Content published; learner exercises pending |
-| 2 | Mathematics for AI | In progress — sessions 003–005 published |
+| 2 | Mathematics for AI | In progress — sessions 003–006 published |
 | 3 | Machine learning | Planned |
 | 4 | Deep learning | Planned |
 | 5 | Transformers and generative AI | Planned |
@@ -34,5 +35,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 **Companion patterns:**
 - [Embedding Retrieval and Specialist Routing](../agent-architectures/patterns/embedding-retrieval-router.md)
 - [Probabilistic Routing with an Abstain Path](../agent-architectures/patterns/probabilistic-routing-abstain.md)
+- [Entropy-Aware Routing with Abstention](../agent-architectures/patterns/entropy-aware-routing-abstention.md)
 
 Update this file as new lessons are published and as learner exercises are completed.
