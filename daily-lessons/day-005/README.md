@@ -219,11 +219,7 @@ P(F\mid A)=
 P(F\mid A)=\frac{0.0095}{0.1085}\approx0.0876
 \]
 
-<box>
-**Result: approximately 8.76%**
-
-Even with 95% sensitivity, fewer than one in ten alarms indicate a real fault under these assumed base rates and detector characteristics.
-</box>
+> **Result: approximately 8.76%.** Even with 95% sensitivity, fewer than one in ten alarms indicate a real fault under these assumed base rates and detector characteristics.
 
 Why? Faults are rare, so the healthy population can produce many false alarms. This is the **base-rate effect**. Sensitivity alone does not tell us the probability that an alarm is correct.
 
@@ -320,10 +316,10 @@ The standard-library Python lab in [lab.py](lab.py) implements:
 
 Run:
 
-\`\`\`bash
+```bash
 cd daily-lessons/day-005
 python lab.py
-\`\`\`
+```
 
 No third-party packages are required.
 
@@ -340,7 +336,7 @@ Monte Carlo results fluctuate. The script fixes the random seed for reproducibil
 
 A specialist router may use a classifier to estimate whether a request concerns a DMA, PCIe, audio or memory issue. A probability estimate can help prioritize a specialist, but it must not grant access to tools or authorize actions.
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
   E[New diagnostic event] --> V[Validate schema and provenance]
   V --> F[Extract features]
@@ -355,7 +351,7 @@ flowchart TD
   P[Authorization policy] --> S
   P --> H
   A --> O[Observability and evaluation]
-\`\`\`
+```
 
 ### Component boundaries
 
@@ -375,7 +371,7 @@ Use thresholds selected on validation data, not arbitrary numbers copied from a 
 
 ### Typed task contract
 
-\`\`\`json
+```json
 {
   "event_id": "unique-event-id",
   "case_id": "diagnostic-case-id",
@@ -386,7 +382,7 @@ Use thresholds selected on validation data, not arbitrary numbers copied from a 
   "evidence_refs": ["trace-123", "log-456"],
   "requested_mode": "read_only"
 }
-\`\`\`
+```
 
 Validate the schema and event identity. Do not accept a model-generated candidate as proof of authorization. Avoid placing raw confidential telemetry into prompts or logs.
 
