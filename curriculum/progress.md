@@ -12,6 +12,7 @@
 | 006 | [Information Theory: Entropy, Cross-Entropy and KL Divergence](../daily-lessons/day-006/README.md) | Published |
 | 007 | [Optimization Algorithms: SGD, Momentum, RMSProp, Adam and AdamW](../daily-lessons/day-007/README.md) | Published |
 | 008 | [Machine Learning Foundations: Problem Formulation, Data Splits, Features, Labels and Baselines](../daily-lessons/day-008/README.md) | Published |
+| 009 | [Supervised Learning: Linear Regression, Logistic Regression and the Learning Objective](../daily-lessons/day-009/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -21,7 +22,7 @@
 |---|---|---|
 | 1 | AI foundations | Content published; learner exercises pending |
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
-| 3 | Machine learning | In progress — session 008 published |
+| 3 | Machine learning | In progress — sessions 008–009 published |
 | 4 | Deep learning | Planned |
 | 5 | Transformers and generative AI | Planned |
 | 6 | LLM application engineering | Planned |
@@ -40,5 +41,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [Entropy-Aware Routing with Abstention](../agent-architectures/patterns/entropy-aware-routing-abstention.md)
 - [Budget-Aware Agent Execution Controller](../agent-architectures/patterns/budget-aware-agent-execution.md)
 - [ML Experiment Governance Agent](../agent-architectures/patterns/ml-experiment-governance-agent.md)
+- [Objective-Aware Model Selection Gate](../agent-architectures/patterns/objective-aware-model-selection-gate.md)
 
 Update this file as new lessons are published and as learner exercises are completed.
