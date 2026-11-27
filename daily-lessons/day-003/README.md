@@ -147,7 +147,7 @@ a=[2,1,0.05],quad w=[0.5,1.2,10]
 ]
 
 [
-acdot w = (2)(0.5)+(1)(1.2)+(0.05)(10)=2.2
+acdot w = (2)(0.5)+(1)(1.2)+(0.05)(10)=2.7
 ]
 
 The result is a scalar. In a neural-network unit, the dot product is commonly followed by a bias:
@@ -385,7 +385,7 @@ The lab uses NumPy. It is intentionally small enough to inspect every value.
 Expected key outputs:
 
 ```text
-dot score: 2.2
+dot score: 2.7
 matrix product:
 [[ 4.  2.  1.]
  [10.  4.  3.]]
