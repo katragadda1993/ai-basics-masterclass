@@ -4,7 +4,7 @@ Use this pattern when a request or event must be routed to one of several specia
 
 ## Architecture
 
-\`\`\`mermaid
+```mermaid
 flowchart TD
   E[Event] --> V[Validate schema, identity and provenance]
   V --> F[Feature extraction]
@@ -20,7 +20,7 @@ flowchart TD
   H --> Q
   Q --> A[Audit record]
   A --> O[Evaluation and observability]
-\`\`\`
+```
 
 ## Separation of concerns
 
@@ -35,7 +35,7 @@ flowchart TD
 
 ## Typed route proposal
 
-\`\`\`json
+```json
 {
   "event_id": "unique-id",
   "case_id": "case-123",
@@ -47,7 +47,7 @@ flowchart TD
   "evidence_refs": ["trace-123", "log-456"],
   "requested_mode": "read_only"
 }
-\`\`\`
+```
 
 Validate ranges, required fields, allowed candidate names and event identity. Treat the proposal as untrusted input even when it came from your own model service.
 
