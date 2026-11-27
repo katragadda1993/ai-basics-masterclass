@@ -73,7 +73,8 @@ ai-basics-masterclass/
 ├── transformers/
 ├── llm/
 ├── rag/
-├── ai-agents/\n├── agent-architectures/ (patterns, templates and examples)
+├── ai-agents/
+├── agent-architectures/ (patterns, templates and examples)
 ├── mcp/
 ├── hands-on-projects/
 ├── exercises/
