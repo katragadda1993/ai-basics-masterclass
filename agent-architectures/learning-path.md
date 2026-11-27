@@ -12,10 +12,11 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A6 | Event-driven agents | How do events start work without duplicate side effects? | Queue consumer, idempotency and dead-letter flow |
 | A7 | Human-in-the-loop | Which actions require approval and how is approval audited? | Approval state, reviewer UI/API and audit trail |
 | A8 | Embedding retrieval and specialist routing | How can vector similarity rank evidence or suggest a specialist without becoming an authorization decision? | Versioned embedding contract, tenant-scoped retrieval and evaluated router with fallback |
-| A9 | State, memory and context | What belongs in working state, episodic memory or retrieval? | Versioned state schema and retrieval policy |
-| A10 | Security and tool boundaries | How are identity, permissions and untrusted content handled? | Threat model, tool policy and injection tests |
-| A11 | Evaluation and observability | How do we know the agent is reliable and improving? | Golden set, traces, metrics and regression gate |
-| A12 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
+| A9 | Entropy-aware routing with abstention | How can predictive uncertainty trigger a safe fallback without becoming an authorization signal? | Entropy, margin and OOD policy with human escalation and evaluation |
+| A10 | State, memory and context | What belongs in working state, episodic memory or retrieval? | Versioned state schema and retrieval policy |
+| A11 | Security and tool boundaries | How are identity, permissions and untrusted content handled? | Threat model, tool policy and injection tests |
+| A12 | Evaluation and observability | How do we know the agent is reliable and improving? | Golden set, traces, metrics and regression gate |
+| A13 | Reliability and cost/latency | How do we bound failures and optimize the whole workflow? | Budgets, retries, checkpointing and performance report |
 
 ## Architecture selection rules
 
