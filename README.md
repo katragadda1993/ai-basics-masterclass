@@ -35,7 +35,7 @@ AI history; AI vs ML vs deep learning vs generative AI; classification, regressi
 Linear algebra; vectors, matrices and tensors; derivatives, gradients and chain rule; probability and Bayes' theorem; statistics and distributions; loss functions, optimization and gradient descent.
 
 ### Phase 3 — Machine learning
-Data preparation and feature engineering; linear/logistic regression; decision trees, random forests and boosting; k-nearest neighbors, SVM and naive Bayes; clustering; dimensionality reduction; train/validation/test splits; metrics, overfitting and regularization.
+Problem formulation; samples, features and labels; train/validation/test splitting; random, stratified, group and time-based evaluation; leakage prevention; preprocessing pipelines; baselines; classification and regression; feature engineering; model selection and metrics.
 
 ### Phase 4 — Deep learning
 Neurons and multilayer networks; forward propagation and backpropagation; activations, losses and optimizers; CNNs, RNNs and LSTMs; GPU training, batches, epochs and checkpoints; model evaluation and debugging.
@@ -59,7 +59,7 @@ Open-weight and hosted models; local inference; fine-tuning, LoRA and quantizati
 Build a small ML application, document Q&A RAG application, tool-using AI agent, MCP-connected assistant and an evaluated end-to-end AI application.
 
 ## Repository structure
-```text
+~~~text
 ai-basics-masterclass/
 ├── README.md
 ├── LICENSE
@@ -79,7 +79,7 @@ ai-basics-masterclass/
 ├── hands-on-projects/
 ├── exercises/
 └── resources/
-```
+~~~
 
 ## Progress
 See [curriculum/progress.md](curriculum/progress.md). A lesson is complete when its notes, examples, lab and review questions are committed.
