@@ -22,7 +22,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A16 | Tree ensemble experiment gate | How can tree/forest candidates be compared reproducibly while protecting split boundaries and preventing feature-importance claims from becoming causal claims? | Immutable split manifest, bounded training workers, validation metric/importance audit, frozen test gate and human approval |
 | A17 | Classical classifier selection gate | How can KNN, Naive Bayes and SVM candidates be compared with correct scaling, calibration checks and a protected final test set? | Typed candidate contracts, leakage-safe pipelines, validation-only selection, frozen test gate and human approval |
 | A18 | Unsupervised discovery and anomaly triage gate | How can unlabeled telemetry be grouped and unusual observations triaged without treating clusters/noise as fault truth? | Versioned feature transform, bounded K-Means/hierarchical/DBSCAN candidates, population-aware metrics, stability checks and human interpretation |
-| A19 | PCA representation and compression governance gate | How can a low-dimensional representation be fitted and deployed without leakage, scaler mismatch or loss of safety-critical signals? | Versioned scaler/PCA artifact, solver policy, explained-variance/reconstruction evaluation, subspace stability and human approval |
+| A19 | PCA representation and compression governance gate | How can a low-dimensional representation be fitted and deployed without leakage, scaler mismatch or loss of safety-critical signals? | Versioned scaler/PCA artifact, solver policy, explained-variance/reconstruction evaluation, subspace stability and human approval |\n| A20 | Anomaly detection and human triage gate | How can unusual telemetry be surfaced without treating a detector score as a confirmed fault or authorization to act? | Nominal reference contract, versioned transforms, Isolation Forest/LOF/One-Class SVM workers, base-rate-aware threshold policy, idempotent cases and human feedback |
 
 ## Architecture selection rules
 
@@ -34,7 +34,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - Use event-driven execution for asynchronous work; make side effects idempotent.
 - Put human approval before irreversible or high-impact operations.
 - For unsupervised discovery, never interpret cluster IDs or density noise as semantic labels without independent evidence and human review.
-- For PCA, version the scaler, feature order and component basis together; fit only on the declared reference/training window and validate downstream signal retention before production use.
+- For PCA, version the scaler, feature order and component basis together; fit only on the declared reference/training window and validate downstream signal retention before production use.\n- For anomaly detection, distinguish contaminated-data outlier detection from clean-reference novelty detection; never equate a noise point or negative score with a confirmed fault. Validate thresholds at realistic base rates and route consequential decisions through human review.
 
 ## Companion implementations
 
@@ -44,7 +44,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [Tree Ensemble Experiment Gate](patterns/tree-ensemble-experiment-gate.md) extends A16. It compares tree/forest candidates with immutable splits, bounded workers, validation-only importance analysis, a frozen-candidate test gate and human approval.
 - The [Classical Classifier Selection Gate](patterns/classical-classifier-selection-gate.md) extends A17. It compares KNN, Naive Bayes and SVM using leakage-safe preprocessing, validation-only selection, calibration checks and a protected final test set.
 - The [Unsupervised Discovery and Anomaly Triage Gate](patterns/unsupervised-discovery-anomaly-triage.md) extends A18. It compares clustering candidates with versioned feature transforms, population-aware metrics, noise semantics, stability checks and human interpretation.
-- The [PCA Representation and Compression Governance Gate](patterns/pca-representation-compression-governance.md) extends A19. It versions preprocessing and principal components together, routes solvers by matrix shape and resource limits, checks reconstruction/downstream utility and requires approval before production schema or alert-policy changes.
+- The [PCA Representation and Compression Governance Gate](patterns/pca-representation-compression-governance.md) extends A19. It versions preprocessing and principal components together, routes solvers by matrix shape and resource limits, checks reconstruction/downstream utility and requires approval before production schema or alert-policy changes.\n- The [Anomaly Detection and Human Triage Gate](patterns/anomaly-detection-human-triage-gate.md) extends A20. It separates novelty scoring from diagnosis, versions the reference population and transforms, enforces base-rate-aware alert policies, creates idempotent cases and requires human review before high-impact actions.
 
 ## Required engineering contract for every pattern
 
