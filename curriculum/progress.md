@@ -16,7 +16,7 @@
 | 010 | [Decision Trees, Entropy, Information Gain, CART and Random Forests](../daily-lessons/day-010/README.md) | Published |
 | 011 | [K-Nearest Neighbors, Naive Bayes and Support Vector Machines](../daily-lessons/day-011/README.md) | Published |
 | 012 | [Unsupervised Learning: Clustering, K-Means, Hierarchical Clustering and DBSCAN](../daily-lessons/day-012/README.md) | Published |
-| 013 | [Dimensionality Reduction: PCA, Eigenvectors, SVD and Feature Compression](../daily-lessons/day-013/README.md) | Published |
+| 013 | [Dimensionality Reduction: PCA, Eigenvectors, SVD and Feature Compression](../daily-lessons/day-013/README.md) | Published |\n| 014 | [Anomaly Detection: Isolation Forest, Local Outlier Factor and One-Class SVM](../daily-lessons/day-014/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -26,7 +26,7 @@
 |---|---|---|
 | 1 | AI foundations | Content published; learner exercises pending |
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
-| 3 | Machine learning | In progress — sessions 008–013 published |
+| 3 | Machine learning | In progress — sessions 008–014 published |
 | 4 | Deep learning | Planned |
 | 5 | Transformers and generative AI | Planned |
 | 6 | LLM application engineering | Planned |
@@ -49,6 +49,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [Tree Ensemble Experiment Gate](../agent-architectures/patterns/tree-ensemble-experiment-gate.md)
 - [Classical Classifier Selection Gate](../agent-architectures/patterns/classical-classifier-selection-gate.md)
 - [Unsupervised Discovery and Anomaly Triage Gate](../agent-architectures/patterns/unsupervised-discovery-anomaly-triage.md)
-- [PCA Representation and Compression Governance Gate](../agent-architectures/patterns/pca-representation-compression-governance.md)
+- [PCA Representation and Compression Governance Gate](../agent-architectures/patterns/pca-representation-compression-governance.md)\n- [Anomaly Detection and Human Triage Gate](../agent-architectures/patterns/anomaly-detection-human-triage-gate.md)
 
 Update this file as new lessons are published and as learner exercises are completed.
