@@ -37,6 +37,27 @@ By the end of this session, you will be able to:
 | 43–55 min | Python forecasting and change-point lab |
 | 55–60 min | Production agent architecture and review |
 
+## Key terminology
+
+| Term | Meaning |
+|---|---|
+| Time series | Ordered observations indexed by time |
+| Cadence / sampling interval | Expected time between consecutive observations |
+| Trend | Long-term direction of a signal |
+| Seasonality | Repeating pattern with a known period |
+| Stationarity | Stable statistical behavior over time, under a stated definition |
+| Autocorrelation | Correlation between a signal and a lagged version of itself |
+| Lag feature | A past observation used as a model input |
+| Rolling window | A fixed or expanding recent interval used to compute statistics |
+| Forecast origin | The latest timestamp whose information is allowed in a forecast |
+| Forecast horizon | How far into the future the target lies |
+| Exogenous feature | An external variable used to explain or predict the target |
+| Residual | Actual observation minus forecast |
+| Change point | A time at which the signal-generating process changes |
+| CUSUM | Cumulative-sum detector for sustained shifts |
+| Watermark | Event-time progress marker used to decide when a stream window is sufficiently complete |
+| Rolling-origin backtest | Repeated evaluation at successive forecast origins |
+
 ## 1. Why time changes the ML problem
 
 A normal tabular dataset often treats each row as independent. Time-series observations are ordered and frequently dependent on previous observations.
