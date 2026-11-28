@@ -24,6 +24,7 @@
 | 018 | [Convolutional Neural Networks: Convolution, Filters, Stride, Padding, Pooling and Feature Maps](../daily-lessons/day-018/README.md) | Published |
 | 019 | [Recurrent Neural Networks: RNN, Hidden State, BPTT, Vanishing Gradients and LSTM](../daily-lessons/day-019/README.md) | Published |
 | 020 | [Attention Mechanism and Transformers: From Query-Key-Value to Self-Attention](../daily-lessons/day-020/README.md) | Published |
+| 021 | [Tokenization, Embeddings and Next-Token Language Modeling](../daily-lessons/day-021/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -35,7 +36,7 @@
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
 | 3 | Machine learning | Content published — sessions 008–015 |
 | 4 | Deep learning | Content published — sessions 016–019 |
-| 5 | Transformers and generative AI | In progress — Session 020 published |
+| 5 | Transformers and generative AI | In progress — Sessions 020–021 published |
 | 6 | LLM application engineering | Planned |
 | 7 | AI agents and orchestration | Planned |
 | 8 | Reusable agent architectures | Planned |
