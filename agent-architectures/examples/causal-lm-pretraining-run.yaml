@@ -18,15 +18,16 @@ corpus:
   protected_test_access: evaluator_only
 
 tokenizer:
-  type: character_demo
-  revision: session-022-lab
+  type: subword_bpe
+  revision: REQUIRED_IMMUTABLE_REVISION
   artifact_sha256: GENERATED_AT_BUILD
   special_tokens:
-    bos: null
-    eos: null
-    pad: null
+    bos: "<|bos|>"
+    eos: "<|eos|>"
+    pad: "<|pad|>"
   note: >-
-    The lesson lab uses a character codec. Production runs should pin the
+    The lesson lab uses a character codec without dedicated special IDs.
+    This example describes a production subword run. Production runs should pin the
     complete subword tokenizer artifact, normalization, pre-tokenizer,
     vocabulary, merge ranks and special-token IDs.
 
