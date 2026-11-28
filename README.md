@@ -41,7 +41,7 @@ Problem formulation; samples, features and labels; train/validation/test splitti
 Neurons and perceptrons; multilayer perceptrons and learned representations; forward propagation; activations and logits; loss functions; backpropagation and the chain rule; gradient checking; initialization and training diagnostics; PyTorch tensors and autograd; Dataset/DataLoader and mini-batch training; CPU/GPU device placement; evaluation and inference modes; checkpointing, recovery, profiling and reproducibility; CNNs from first principles; convolution/cross-correlation, channels, filters, feature maps, stride, padding, dilation, pooling, receptive fields and parameter sharing; 1D CNNs for waveforms and 2D CNNs for images and spectrograms; RNNs from first principles; hidden state, sequence task types, unrolling and backpropagation through time (BPTT); vanishing/exploding gradients, clipping and truncated BPTT; LSTM cell state and input/forget/output gates; GRU reset/update gates; variable-length and packed sequences; bidirectional versus causal streaming models; stateful inference and per-stream state isolation; model evaluation and debugging.
 
 ### Phase 5 — Transformers and generative AI
-Attention and self-attention; query/key/value projections; scaled dot-product and multi-head attention; causal and padding masks; positional information; encoder, encoder-decoder and decoder-only Transformer architectures; context windows, KV cache and attention efficiency; tokenization and embeddings; next-token prediction, pretraining and instruction tuning; LLM capabilities, evaluation and limitations; multimodal text, image and audio models. Session 020 is published; see [curriculum/progress.md](curriculum/progress.md).
+Attention and self-attention; query/key/value projections; scaled dot-product and multi-head attention; causal and padding masks; positional information; encoder, encoder-decoder and decoder-only Transformer architectures; context windows, KV cache and attention efficiency; tokenization and subword algorithms (BPE, WordPiece, Unigram); vocabulary and special-token contracts; embedding matrices and positional information; next-token prediction, teacher forcing, causal cross-entropy and perplexity; pretraining and instruction tuning; LLM capabilities, evaluation and limitations; multimodal text, image and audio models. Sessions 020–021 are published; see [curriculum/progress.md](curriculum/progress.md).
 
 ### Phase 6 — LLM application engineering
 Prompt design and structured outputs; embedding models and semantic search; vector databases; RAG; chunking and reranking; tool/function calling; evaluation, tracing, guardrails, cost and latency.
@@ -82,7 +82,7 @@ ai-basics-masterclass/
 ~~~
 
 ## Progress
-See [curriculum/progress.md](curriculum/progress.md). Sessions 001–020 are published; Phase 5 (Transformers and generative AI) has started. A lesson is complete when its notes, examples, lab and review questions are committed.
+See [curriculum/progress.md](curriculum/progress.md). Sessions 001–021 are published; Phase 5 (Transformers and generative AI) is in progress. A lesson is complete when its notes, examples, lab and review questions are committed.
 
 ## Licensing
 - Code and software examples: [MIT](LICENSE).
