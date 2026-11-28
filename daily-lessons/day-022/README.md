@@ -199,7 +199,7 @@ If only weights are restored, AdamW moments and the learning-rate schedule may b
 
 Write checkpoints atomically (temporary file then rename), validate artifact hashes, and load only trusted artifacts. For untrusted model files, do not enable unrestricted pickle loading.
 
-The lab performs a small model/optimizer/scheduler checkpoint round-trip and verifies identical logits after restoring the model. A production checkpoint must preserve the full state listed above.
+The lab writes model, optimizer, scheduler, step, vocabulary and model configuration into a trusted temporary checkpoint, then reloads the model weights and verifies identical logits. This is a checkpoint smoke test, not a full interrupted-run resume; production must also restore scaler, RNG, sampler and data-cursor state.
 
 ## 6. Text generation and decoding
 
