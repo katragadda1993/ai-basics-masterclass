@@ -29,6 +29,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A23 | PyTorch training runtime and GPU-aware execution gate | How can an assistant help configure and inspect PyTorch jobs while deterministic services own autograd training, device quotas, checkpoint recovery and model promotion? | Typed experiment contract, CPU/GPU controller, DataLoader/training worker, full checkpoint manifest, profiler metrics, idempotent job events and human release approval |
 | A24 | CNN and signal-representation training gate | How can image, waveform and spectrogram CNN experiments preserve acquisition/preprocessing contracts and remain reproducible from training through release? | Typed modality contract, versioned representation pipeline, 1D/2D CNN workers, robustness evaluation, artifact lineage and human promotion approval |
 | A25 | Sequence modeling and stateful inference governance gate | How can recurrent models learn ordered patterns while streaming hidden/cell state remains isolated, versioned, recoverable and safe? | Typed sequence/event contract, RNN/LSTM/GRU workers, BPTT/gradient policy, temporal/device-separated evaluation, per-stream state store, idempotent event processing and human release approval |
+| A26 | Transformer training and inference governance | How can attention-based models preserve tokenizer, mask, context and KV-cache contracts from training through multi-tenant inference? | Typed token/sequence contract, deterministic mask validation, encoder/decoder workers, causal-leakage tests, protected test gate, scoped KV cache and human release approval |
 
 ## Architecture selection rules
 
@@ -63,6 +64,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [PyTorch Training Runtime and GPU-Aware Execution Gate](patterns/pytorch-training-runtime-gpu-execution-gate.md) extends A23. It separates read-only agent assistance from deterministic PyTorch training, CPU/GPU scheduling, DataLoader execution, complete checkpoint recovery, profiling, validation/test boundaries and human registry approval.
 - The [CNN and Signal-Representation Training Gate](patterns/cnn-signal-representation-training-gate.md) extends A24. It routes validated image, waveform and spectrogram contracts to approved 1D/2D CNN paths, versions acquisition and preprocessing metadata with the model, evaluates robustness, and keeps training, test access and release under deterministic services and human approval.
 - The [Sequence Modeling and Stateful Inference Governance Gate](patterns/sequence-modeling-stateful-inference-governance.md) extends A25. It separates LLM-assisted experiment planning and evidence summaries from deterministic RNN/LSTM/GRU training and inference, versions sequence and acquisition contracts, isolates per-stream hidden/cell state, handles replay and late events idempotently, evaluates with temporal/device splits, and requires independent verification plus human release approval.
+- The [Transformer Training and Inference Governance Gate](patterns/transformer-training-inference-governance.md) extends A26. It versions tokenizer/model/position contracts, tests causal and padding masks, separates encoder/decoder training paths, scopes KV cache by tenant/session/model, enforces context and compute budgets, and requires independent evaluation plus human release approval.
 
 ## Required engineering contract for every pattern
 
@@ -79,3 +81,5 @@ Every implementation must document:
 - End-to-end latency and cost per successful task
 
 Do not assume a multi-agent design is more capable. Compare it against a simpler baseline on the same evaluation set.
+
+- For Transformers, treat tokenizer IDs, special tokens, positional method and attention-mask semantics as versioned interfaces. Test causal future-token isolation and padding invariance; scope KV cache to an authorized request/session and model revision; measure context-dependent memory, time-to-first-token and inter-token latency. Attention weights are not authorization evidence or a causal explanation.
