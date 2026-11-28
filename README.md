@@ -35,7 +35,7 @@ AI history; AI vs ML vs deep learning vs generative AI; classification, regressi
 Linear algebra; vectors, matrices and tensors; derivatives, gradients and chain rule; probability and Bayes' theorem; statistics and distributions; loss functions, optimization and gradient descent.
 
 ### Phase 3 — Machine learning
-Problem formulation; samples, features and labels; train/validation/test splitting; random, stratified, group and time-based evaluation; leakage prevention; preprocessing pipelines; baselines; linear and logistic regression; decision trees, Gini, entropy and information gain; CART, pruning and random forests; feature importance; K-nearest neighbors, SVM, naive Bayes; feature engineering; model selection and metrics.
+Problem formulation; samples, features and labels; train/validation/test splitting; random, stratified, group and time-based evaluation; leakage prevention; preprocessing pipelines; baselines; linear and logistic regression; decision trees, Gini, entropy and information gain; CART, pruning and random forests; feature importance; K-nearest neighbors, SVM, naive Bayes; feature engineering; model selection and metrics; unsupervised learning and clustering; dimensionality reduction, PCA, eigenvectors and SVD; anomaly detection.
 
 ### Phase 4 — Deep learning
 Neurons and multilayer networks; forward propagation and backpropagation; activations, losses and optimizers; CNNs, RNNs and LSTMs; GPU training, batches, epochs and checkpoints; model evaluation and debugging.
