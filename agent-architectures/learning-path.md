@@ -25,6 +25,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A19 | PCA representation and compression governance gate | How can a low-dimensional representation be fitted and deployed without leakage, scaler mismatch or loss of safety-critical signals? | Versioned scaler/PCA artifact, solver policy, explained-variance/reconstruction evaluation, subspace stability and human approval |
 | A20 | Anomaly detection and human triage gate | How can unusual telemetry be surfaced without treating a detector score as a confirmed fault or authorization to act? | Nominal reference contract, versioned transforms, Isolation Forest/LOF/One-Class SVM workers, base-rate-aware threshold policy, idempotent cases and human feedback |
 | A21 | Time-series forecasting and change-point monitoring gate | How can ordered telemetry be forecast and sustained changes detected without temporal leakage or turning an alert into a diagnosis? | Event-time contract, durable windows, versioned lag features/model/residual baseline, temporal backtests, CUSUM/EWMA policy, idempotent cases and human review |
+| A22 | Deep-learning training and release gate | How can an assistant help plan and explain neural-network experiments while deterministic systems own training, data boundaries, evaluation and release? | Typed experiment contract, immutable split manifest, deterministic training runtime, gradient/metric verifier, checkpoint lineage, budget controls and human promotion approval |
 
 ## Architecture selection rules
 
@@ -39,6 +40,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - For PCA, version the scaler, feature order and component basis together; fit only on the declared reference/training window and validate downstream signal retention before production use.
 - For anomaly detection, distinguish contaminated-data outlier detection from clean-reference novelty detection; never equate a noise point or negative score with a confirmed fault. Validate thresholds at realistic base rates and route consequential decisions through human review.
 - For time-series systems, preserve event-time ordering, construct features only from data available at the forecast origin, validate with rolling-origin splits, and make stream/window state idempotent. A forecast residual or change-point alert is evidence for triage, not a root-cause diagnosis.
+- For deep learning, keep tensor computation and gradient updates in deterministic, versioned training code. Persist compatible checkpoints and split manifests, verify gradients/finite values/artifact lineage, and require independent evaluation plus human approval before registry promotion.
 
 ## Companion implementations
 
@@ -51,6 +53,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [PCA Representation and Compression Governance Gate](patterns/pca-representation-compression-governance.md) extends A19. It versions preprocessing and principal components together, routes solvers by matrix shape and resource limits, checks reconstruction/downstream utility and requires approval before production schema or alert-policy changes.
 - The [Anomaly Detection and Human Triage Gate](patterns/anomaly-detection-human-triage-gate.md) extends A20. It separates novelty scoring from diagnosis, versions the reference population and transforms, enforces base-rate-aware alert policies, creates idempotent cases and requires human review before high-impact actions.
 - The [Time-Series Forecasting and Change-Point Monitoring Gate](patterns/time-series-forecasting-change-point-gate.md) extends A21. It combines event-time ordering, durable windows, leakage-safe lag features, temporal backtesting, forecast residuals, CUSUM/EWMA policies, idempotent investigations and human review.
+- The [Deep-Learning Training and Release Gate](patterns/deep-learning-training-experiment-gate.md) extends A22. It separates LLM-assisted experiment planning/explanation from deterministic tensor training, checkpointing, evaluation and registry promotion, with typed contracts, immutable data splits, resource budgets and human approval.
 
 ## Required engineering contract for every pattern
 
