@@ -1,0 +1,94 @@
+# A27 example: tokenizer + causal language-model experiment.
+# Illustrative contract only; values must be validated by the job controller.
+
+experiment:
+  id: "lm-domain-baseline-001"
+  purpose: "Establish a reproducible next-token baseline on approved diagnostic text"
+  owner_team: "ml-platform"
+  seed: 21021
+
+corpus:
+  manifest_sha256: "REPLACE_WITH_APPROVED_MANIFEST_SHA256"
+  allowed_sources:
+    - "approved-training-corpus"
+  split_policy:
+    unit: "document"
+    train_fraction: 0.80
+    validation_fraction: 0.10
+    test_fraction: 0.10
+    deduplicate_before_split: true
+  privacy_scan_required: true
+  license_review_required: true
+  execute_embedded_code: false
+
+tokenizer:
+  family: "bpe"
+  implementation: "toy-reference-for-education"
+  revision: "a27-demo-v1"
+  normalization: "explicit-and-versioned"
+  pre_tokenizer: "whitespace-demo"
+  vocab_size_target: 108
+  special_tokens:
+    pad: "<pad>"
+    bos: "<bos>"
+    eos: "<eos>"
+    unk: "<unk>"
+  artifact_sha256: "GENERATED_AFTER_TRAINING"
+  fit_on: "train_split_only"
+
+model:
+  architecture: "decoder-only-transformer"
+  context_length: 24
+  embedding_dim: 48
+  attention_heads: 4
+  layers: 1
+  tie_input_output_embeddings: true
+  tokenizer_revision: "a27-demo-v1"
+
+training:
+  objective: "causal_next_token_cross_entropy"
+  batch_size: 32
+  max_steps: 180
+  optimizer: "AdamW"
+  learning_rate: 0.002
+  gradient_clip_norm: 1.0
+  checkpoint_every_steps: 50
+  accelerator: "cpu-or-approved-cuda"
+  max_wall_time_minutes: 30
+
+evaluation:
+  metrics:
+    - "held_out_token_nll"
+    - "perplexity"
+    - "tokenizer_round_trip"
+    - "special_token_contract"
+    - "causal_leakage"
+    - "pad_loss_masking"
+  require_source_disjoint_splits: true
+  require_tokenizer_hash_match: true
+  protected_test_access: "evaluator_only"
+  acceptance:
+    finite_loss: true
+    causal_leakage_tolerance: 0.000001
+    require_human_approval: true
+
+runtime:
+  max_retries: 2
+  idempotency_key: "experiment.id+corpus.manifest_sha256+tokenizer.revision+model"
+  emit_events:
+    - "tokenizer.artifact.created"
+    - "training.checkpoint.saved"
+    - "evaluation.completed"
+  trace_fields:
+    - "experiment.id"
+    - "corpus.manifest_sha256"
+    - "tokenizer.revision"
+    - "model.revision"
+    - "checkpoint.step"
+  redact_corpus_text_in_logs: true
+
+release:
+  model_tokenizer_pair_immutable: true
+  require_independent_verification: true
+  require_human_approval: true
+  production_promotion_by_agent: false
