@@ -19,6 +19,7 @@
 | 013 | [Dimensionality Reduction: PCA, Eigenvectors, SVD and Feature Compression](../daily-lessons/day-013/README.md) | Published |
 | 014 | [Anomaly Detection: Isolation Forest, Local Outlier Factor and One-Class SVM](../daily-lessons/day-014/README.md) | Published |
 | 015 | [Time-Series Machine Learning: Forecasting, Windowing, Temporal Validation and Change-Point Detection](../daily-lessons/day-015/README.md) | Published |
+| 016 | [Neural Networks from First Principles: Perceptrons, MLP, Forward Propagation and Backpropagation](../daily-lessons/day-016/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -28,8 +29,8 @@
 |---|---|---|
 | 1 | AI foundations | Content published; learner exercises pending |
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
-| 3 | Machine learning | In progress — sessions 008–015 published |
-| 4 | Deep learning | Planned |
+| 3 | Machine learning | Content published — sessions 008–015 |
+| 4 | Deep learning | In progress — session 016 published |
 | 5 | Transformers and generative AI | Planned |
 | 6 | LLM application engineering | Planned |
 | 7 | AI agents and orchestration | Planned |
@@ -54,5 +55,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [PCA Representation and Compression Governance Gate](../agent-architectures/patterns/pca-representation-compression-governance.md)
 - [Anomaly Detection and Human Triage Gate](../agent-architectures/patterns/anomaly-detection-human-triage-gate.md)
 - [Time-Series Forecasting and Change-Point Monitoring Gate](../agent-architectures/patterns/time-series-forecasting-change-point-gate.md)
+- [Deep-Learning Training and Release Gate](../agent-architectures/patterns/deep-learning-training-experiment-gate.md)
 
 Update this file as new lessons are published and as learner exercises are completed.
