@@ -25,7 +25,7 @@
 | 019 | [Recurrent Neural Networks: RNN, Hidden State, BPTT, Vanishing Gradients and LSTM](../daily-lessons/day-019/README.md) | Published |
 | 020 | [Attention Mechanism and Transformers: From Query-Key-Value to Self-Attention](../daily-lessons/day-020/README.md) | Published |
 | 021 | [Tokenization, Embeddings and Next-Token Language Modeling](../daily-lessons/day-021/README.md) | Published |
-| 022 | [Causal Language Model Pretraining, Sampling and Text Generation](../daily-lessons/day-022/README.md) | Published |
+| 022 | [Causal Language Model Pretraining, Sampling and Text Generation](../daily-lessons/day-022/README.md) | Published |\n| 023 | [Instruction Tuning, Supervised Fine-Tuning and Chat Templates](../daily-lessons/day-023/README.md) | Published |
 
 **Learner progress:** Publishing a lesson does not mean the exercises are complete. Mark a session complete after working through the lab and review questions.
 
@@ -37,7 +37,7 @@
 | 2 | Mathematics for AI | Content published — sessions 003–007 |
 | 3 | Machine learning | Content published — sessions 008–015 |
 | 4 | Deep learning | Content published — sessions 016–019 |
-| 5 | Transformers and generative AI | In progress — Sessions 020–022 published |
+| 5 | Transformers and generative AI | In progress — Sessions 020–023 published |
 | 6 | LLM application engineering | Planned |
 | 7 | AI agents and orchestration | Planned |
 | 8 | Reusable agent architectures | Planned |
@@ -66,6 +66,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [CNN and Signal-Representation Training Gate](../agent-architectures/patterns/cnn-signal-representation-training-gate.md)
 - [Sequence Modeling and Stateful Inference Governance Gate](../agent-architectures/patterns/sequence-modeling-stateful-inference-governance.md)
 - [Transformer Training and Inference Governance Gate](../agent-architectures/patterns/transformer-training-inference-governance.md)
-- [Causal LM Pretraining and Generation Governance Gate](../agent-architectures/patterns/causal-lm-pretraining-generation-governance.md)
+- [Causal LM Pretraining and Generation Governance Gate](../agent-architectures/patterns/causal-lm-pretraining-generation-governance.md)\n- [Instruction-Tuning and Chat-Template Governance Gate](../agent-architectures/patterns/instruction-tuning-chat-template-governance.md)
 
 Update this file as new lessons are published and as learner exercises are completed.

@@ -1,0 +1,96 @@
+# A29 illustrative SFT run contract.
+# Replace placeholders with immutable, access-controlled artifact revisions.
+run:
+  name: silicon-diagnostics-instruction-sft
+  seed: 23023
+  max_optimizer_steps: 300
+  deadline_minutes: 45
+  retry_policy:
+    max_transient_retries: 2
+    retry_deterministic_data_errors: false
+
+base_model:
+  revision: REQUIRED_IMMUTABLE_MODEL_REVISION
+  architecture: causal_decoder
+  trust_remote_code: false
+
+tokenizer:
+  revision: REQUIRED_IMMUTABLE_TOKENIZER_REVISION
+  artifact_sha256: REQUIRED_HASH
+  special_tokens:
+    bos: REQUIRED_MODEL_SPECIFIC_TOKEN
+    message_end: REQUIRED_MODEL_SPECIFIC_TOKEN
+    assistant_turn_end: REQUIRED_MODEL_SPECIFIC_TOKEN
+    pad: REQUIRED_MODEL_SPECIFIC_TOKEN
+  fail_on_revision_mismatch: true
+
+chat_template:
+  revision: REQUIRED_TEMPLATE_REVISION
+  sha256: REQUIRED_TEMPLATE_HASH
+  training_add_generation_prompt: false
+  inference_add_generation_prompt: true
+  assistant_generation_mask: REQUIRED_AND_TESTED
+  tool_call_roles: explicit
+  end_marker_semantics: model_specific
+
+dataset:
+  manifest: artifacts/sft-manifest.json
+  manifest_sha256: REQUIRED_IMMUTABLE_HASH
+  split_unit: conversation_or_source_group
+  deduplicate_before_split: true
+  enforce_license_privacy_and_retention_policy: true
+  protected_test_access: evaluator_only
+  include_abstention_examples: true
+  include_general_capability_regression_set: true
+
+sequence:
+  max_length: 192
+  truncation: explicit
+  padding: right
+  packing: disabled_for_toy_run
+  mask_prompt_tokens: true
+  supervise_assistant_end_marker: true
+  require_nonzero_assistant_targets: true
+
+training:
+  objective: supervised_assistant_only_cross_entropy
+  adapter_mode: full
+  learning_rate: 0.001
+  optimizer: AdamW
+  weight_decay: 0.01
+  gradient_clip_norm: 1.0
+  batch_size: 16
+  epochs_or_steps: bounded
+  checkpoint:
+    interval_steps: 50
+    include_optimizer_scheduler_scaler_rng_sampler: true
+    atomic_write: true
+
+evaluation:
+  validation_only_for_selection: true
+  protected_test_after_freeze: true
+  metrics:
+    - assistant_token_negative_log_likelihood
+    - instruction_task_success
+    - structured_output_schema_validity
+    - tool_call_contract_validity
+    - abstention_quality
+    - safety_regression
+    - general_capability_regression
+  require_template_round_trip: true
+  require_assistant_mask_alignment: true
+  require_checkpoint_restore: true
+
+governance:
+  assistant_permissions:
+    inspect_dataset_manifest: read_metadata_only
+    inspect_masks_and_metrics: read
+    launch_training: submit_typed_job
+    read_protected_test_labels: deny
+    promote_model: deny
+    execute_shell: deny
+  promotion_requires:
+    - independent_verification
+    - general_capability_regression_pass
+    - safety_evaluation_pass
+    - human_approval
