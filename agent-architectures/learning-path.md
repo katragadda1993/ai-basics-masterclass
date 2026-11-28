@@ -30,6 +30,7 @@ This track is introduced after the foundations and LLM application concepts. Eac
 | A24 | CNN and signal-representation training gate | How can image, waveform and spectrogram CNN experiments preserve acquisition/preprocessing contracts and remain reproducible from training through release? | Typed modality contract, versioned representation pipeline, 1D/2D CNN workers, robustness evaluation, artifact lineage and human promotion approval |
 | A25 | Sequence modeling and stateful inference governance gate | How can recurrent models learn ordered patterns while streaming hidden/cell state remains isolated, versioned, recoverable and safe? | Typed sequence/event contract, RNN/LSTM/GRU workers, BPTT/gradient policy, temporal/device-separated evaluation, per-stream state store, idempotent event processing and human release approval |
 | A26 | Transformer training and inference governance | How can attention-based models preserve tokenizer, mask, context and KV-cache contracts from training through multi-tenant inference? | Typed token/sequence contract, deterministic mask validation, encoder/decoder workers, causal-leakage tests, protected test gate, scoped KV cache and human release approval |
+| A27 | Tokenizer and language-model training governance | How can corpus policy, tokenizer IDs, special tokens, shifted targets and perplexity remain reproducible and compatible from training through inference? | Immutable corpus/split manifests, versioned tokenizer artifact, tokenization coverage tests, causal-LM trainer, protected test gate, model/tokenizer compatibility record and human release approval |
 
 ## Architecture selection rules
 
@@ -66,6 +67,8 @@ This track is introduced after the foundations and LLM application concepts. Eac
 - The [Sequence Modeling and Stateful Inference Governance Gate](patterns/sequence-modeling-stateful-inference-governance.md) extends A25. It separates LLM-assisted experiment planning and evidence summaries from deterministic RNN/LSTM/GRU training and inference, versions sequence and acquisition contracts, isolates per-stream hidden/cell state, handles replay and late events idempotently, evaluates with temporal/device splits, and requires independent verification plus human release approval.
 - The [Transformer Training and Inference Governance Gate](patterns/transformer-training-inference-governance.md) extends A26. It versions tokenizer/model/position contracts, tests causal and padding masks, separates encoder/decoder training paths, scopes KV cache by tenant/session/model, enforces context and compute budgets, and requires independent evaluation plus human release approval.
 
+- The [Tokenizer and Language-Model Training Governance Gate](patterns/tokenizer-language-model-governance-gate.md) extends A27. It makes corpus policy, tokenizer artifact identity, special-token contracts, shifted next-token targets, padding/causal tests, held-out perplexity and human model promotion explicit. See the [example experiment contract](examples/tokenizer-language-model-experiment.yaml).
+
 ## Required engineering contract for every pattern
 
 Every implementation must document:
@@ -83,3 +86,4 @@ Every implementation must document:
 Do not assume a multi-agent design is more capable. Compare it against a simpler baseline on the same evaluation set.
 
 - For Transformers, treat tokenizer IDs, special tokens, positional method and attention-mask semantics as versioned interfaces. Test causal future-token isolation and padding invariance; scope KV cache to an authorized request/session and model revision; measure context-dependent memory, time-to-first-token and inter-token latency. Attention weights are not authorization evidence or a causal explanation.
+- For tokenization and causal language modeling, version normalization, pre-tokenization, vocabulary, merge ranks and special-token IDs as one tokenizer artifact. Fit learned tokenizer state only on the declared training corpus, preserve document-level split boundaries, test encode/decode and shifted-target alignment, exclude padding from loss, and report held-out NLL/perplexity with tokenizer/corpus metadata. Never pair a model with an unverified tokenizer revision or let an agent access protected test data or promote a model.
