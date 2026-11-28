@@ -38,7 +38,7 @@ Linear algebra; vectors, matrices and tensors; derivatives, gradients and chain 
 Problem formulation; samples, features and labels; train/validation/test splitting; random, stratified, group and time-based evaluation; leakage prevention; preprocessing pipelines; baselines; linear and logistic regression; decision trees, Gini, entropy and information gain; CART, pruning and random forests; feature importance; K-nearest neighbors, SVM, naive Bayes; feature engineering; model selection and metrics; unsupervised learning and clustering; dimensionality reduction, PCA, eigenvectors and SVD; anomaly detection; time-series forecasting, lag/window features, temporal validation, ARIMA fundamentals and residual-based change-point detection.
 
 ### Phase 4 — Deep learning
-Neurons and multilayer networks; forward propagation and backpropagation; activations, losses and optimizers; CNNs, RNNs and LSTMs; GPU training, batches, epochs and checkpoints; model evaluation and debugging.
+Neurons and perceptrons; multilayer perceptrons and learned representations; forward propagation; activations and logits; loss functions; backpropagation and the chain rule; gradient checking; initialization and training diagnostics; PyTorch autograd and training loops; CNNs, RNNs and LSTMs; GPU training, batches, epochs and checkpoints; model evaluation and debugging.
 
 ### Phase 5 — Transformers and generative AI
 Tokenization and embeddings; attention and self-attention; transformer encoder/decoder architecture; positional information and context windows; pretraining and instruction tuning; LLM capabilities and limitations; multimodal text, image and audio models.
