@@ -66,5 +66,6 @@ See [the sequential agent architecture learning path](../agent-architectures/lea
 - [CNN and Signal-Representation Training Gate](../agent-architectures/patterns/cnn-signal-representation-training-gate.md)
 - [Sequence Modeling and Stateful Inference Governance Gate](../agent-architectures/patterns/sequence-modeling-stateful-inference-governance.md)
 - [Transformer Training and Inference Governance Gate](../agent-architectures/patterns/transformer-training-inference-governance.md)
+- [Causal LM Pretraining and Generation Governance Gate](../agent-architectures/patterns/causal-lm-pretraining-generation-governance.md)
 
 Update this file as new lessons are published and as learner exercises are completed.
