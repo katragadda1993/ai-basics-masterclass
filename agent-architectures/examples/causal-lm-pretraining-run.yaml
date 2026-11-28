@@ -1,0 +1,92 @@
+# A28 illustrative, non-production training-run contract.
+# Replace paths/revisions with immutable, access-controlled artifacts.
+run:
+  name: tiny-gpt-diagnostic-corpus
+  seed: 22022
+  max_optimizer_steps: 220
+  deadline_minutes: 30
+  retry_policy:
+    max_transient_retries: 2
+    retry_deterministic_data_errors: false
+
+corpus:
+  manifest: artifacts/corpus-manifest.json
+  manifest_sha256: REQUIRED_IMMUTABLE_HASH
+  source_split_unit: document
+  deduplicate_before_split: true
+  enforce_license_and_privacy_policy: true
+  protected_test_access: evaluator_only
+
+tokenizer:
+  type: character_demo
+  revision: session-022-lab
+  artifact_sha256: GENERATED_AT_BUILD
+  special_tokens:
+    bos: null
+    eos: null
+    pad: null
+  note: >-
+    The lesson lab uses a character codec. Production runs should pin the
+    complete subword tokenizer artifact, normalization, pre-tokenizer,
+    vocabulary, merge ranks and special-token IDs.
+
+model:
+  family: decoder_only_transformer
+  context_length: 64
+  d_model: 64
+  layers: 2
+  heads: 4
+  dropout: 0.0
+  tie_input_output_embeddings: true
+
+training:
+  optimizer: AdamW
+  learning_rate: 0.003
+  weight_decay: 0.1
+  scheduler: linear_warmup_cosine_decay
+  warmup_steps: 20
+  micro_batch_size: 32
+  gradient_accumulation_steps: 2
+  gradient_clip_norm: 1.0
+  precision:
+    cpu: fp32
+    cuda: fp16_autocast_with_grad_scaler
+  checkpoint:
+    interval_steps: 55
+    include_optimizer_scheduler_scaler_rng_sampler: true
+    atomic_write: true
+
+evaluation:
+  validation_only_for_selection: true
+  protected_test_after_freeze: true
+  metrics:
+    - token_negative_log_likelihood
+    - perplexity
+    - generation_stop_behavior
+    - repetition_rate
+    - domain_coverage
+  require_causal_mask_test: true
+  require_shifted_target_test: true
+  require_checkpoint_restore_test: true
+
+generation:
+  max_new_tokens: 128
+  default_strategy: top_p
+  temperature: 0.8
+  top_k: 40
+  top_p: 0.9
+  stop_on_eos: true
+  context_overflow: explicit_truncate_or_reject
+  request_deadline_seconds: 30
+
+governance:
+  assistant_permissions:
+    inspect_metrics: read
+    inspect_corpus_manifest: read_metadata_only
+    launch_training: submit_typed_job
+    read_protected_test_labels: deny
+    promote_model: deny
+    execute_shell: deny
+  promotion_requires:
+    - independent_verification
+    - human_approval
